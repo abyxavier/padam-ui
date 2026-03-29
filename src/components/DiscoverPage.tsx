@@ -5,7 +5,6 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { useRecommendations } from '@/services/useRecommendations';
 import { AlertTriangle } from 'lucide-react';
-import type { AxiosError } from 'axios';
 
 
 const GENRES = ['All', 'Sci-Fi', 'Drama', 'Action', 'Thriller', 'Horror', 'Comedy'];
@@ -13,7 +12,7 @@ const GENRES = ['All', 'Sci-Fi', 'Drama', 'Action', 'Thriller', 'Horror', 'Comed
 export default function DiscoverPage() {
   const [query, setQuery] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('All');
-  const { mutate: recommend, data, isPending: isLoading, isError, error } = useRecommendations();
+  const { mutate: recommend, data, isPending: isLoading, isError } = useRecommendations();
 
   const handleSearch = (e: React.SyntheticEvent) => {
     e.preventDefault();

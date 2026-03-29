@@ -1,6 +1,3 @@
-type Tab = 'discover' | 'reviews';
-
-
 
 export default function Navbar() {
   return (
